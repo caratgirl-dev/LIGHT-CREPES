@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700;900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Playfair Display SC', serif;
+}
+
+header {
+  background-color: #f1bab8; /* rose pastel */
+  padding: 10px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center; /* centre tout le contenu */
+  align-items: center;
+  gap: 80px; /* espace global entre chaque bloc (liens gauche, logo, liens droite) */
+}
+
+.nav-links {
+  display: flex;
+  gap: 205px; /* réduit l’écart entre les liens */
+}
+
+.nav-links a {
+  color: #7a8450;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #6b0023; /* effet hover */
+}
+
+.logo img {
+  height: 150px; /* réduit un peu pour que ça soit harmonieux */
+  width: auto;
+}
+.hero {
+  position: relative;
+  background-image: url('../img/téléchargement.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-overlay-image {
+  position: absolute;
+  top: 50px;  /* place l’image décorative plus haut */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hero-overlay-image img {
+  width: 150px;
+  height: auto;
+}
+
+.hero-content {
+  position: relative; /* reste au centre par-dessus le fond */
+  color: #7a8450;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 30px 40px;
+  border-radius: 10px;
+}
+
+.hero h1 {
+  font-size: 56px;
+  margin: 0 0 15px;
+  font-family: 'Playfair Display SC', serif;
+}
+
+.hero p {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.hero .btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #7a8450;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+  background-color: #5a633c;
+}
