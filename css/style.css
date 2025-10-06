@@ -1,26 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700;900&family=Poppins:wght@400;600&display=swap');
 
+/* RESET + FONT */
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
   font-family: 'Playfair Display SC', serif;
 }
 
+/* HEADER */
 header {
-  background-color: #f1bab8; /* rose pastel */
+  background-color: #f1bab8;
   padding: 10px 0;
 }
 
 .navbar {
   display: flex;
-  justify-content: center; /* centre tout le contenu */
+  justify-content: center;
   align-items: center;
-  gap: 80px; /* espace global entre chaque bloc (liens gauche, logo, liens droite) */
+  flex-wrap: wrap;
+  gap: 60px;
 }
 
 .nav-links {
   display: flex;
-  gap: 205px; /* réduit l’écart entre les liens */
+  gap: 40px;
 }
 
 .nav-links a {
@@ -32,16 +40,18 @@ header {
 }
 
 .nav-links a:hover {
-  color: #6b0023; /* effet hover */
+  color: #6b0023;
 }
 
 .logo img {
-  height: 150px; /* réduit un peu pour que ça soit harmonieux */
+  height: 120px;
   width: auto;
 }
+
+/* HERO SECTION */
 .hero {
   position: relative;
-  background-image: url('../img/téléchargement.jpg');
+  background-image: url('../img/crepes-aux-fraises-et-chocolat-decorees-de-feuilles-de-menthe.jpg');
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -51,30 +61,26 @@ header {
   text-align: center;
 }
 
-.hero-overlay-image {
+.hero::before {
+  content: "";
   position: absolute;
-  top: 50px;  /* place l’image décorative plus haut */
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.hero-overlay-image img {
-  width: 150px;
-  height: auto;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(3px);
 }
 
 .hero-content {
-  position: relative; /* reste au centre par-dessus le fond */
-  color: #7a8450;
-  background-color: rgba(255, 255, 255, 0.7);
+  position: relative;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
   padding: 30px 40px;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
 .hero h1 {
   font-size: 56px;
   margin: 0 0 15px;
-  font-family: 'Playfair Display SC', serif;
 }
 
 .hero p {
@@ -82,7 +88,7 @@ header {
   margin-bottom: 20px;
 }
 
-.hero .btn {
+.btn {
   display: inline-block;
   padding: 12px 25px;
   background-color: #7a8450;
@@ -93,6 +99,290 @@ header {
   transition: background-color 0.3s ease;
 }
 
-.hero .btn:hover {
+.btn:hover {
   background-color: #5a633c;
+}
+
+/* MENU SECTION */
+.menu {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #fff6f6;
+}
+
+.menu h2 {
+  font-size: 42px;
+  margin-bottom: 40px;
+  color: #7a8450;
+}
+
+.menu-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.menu-item {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 300px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.menu-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.menu-item h3 {
+  color: #6b0023;
+}
+
+.price {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #7a8450;
+}
+
+/* A PROPOS */
+.about {
+  background-color: #fef9f8;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.about h2 {
+  color: #7a8450;
+  margin-bottom: 20px;
+}
+
+.about p {
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* CONTACT */
+.contact {
+  padding: 80px 20px;
+  background-color: #f1bab8;
+  text-align: center;
+}
+
+.contact h2 {
+  color: #6b0023;
+  margin-bottom: 15px;
+}
+
+.contact p {
+  color: #fff;
+  margin-bottom: 40px;
+  font-size: 18px;
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.contact .btn {
+  padding: 14px 30px;
+  font-size: 18px;
+  border-radius: 8px;
+}
+
+.whatsapp {
+  background-color: #6b0023;
+}
+
+.yango {
+  background-color: #6b0023;
+}
+/* FOOTER */
+footer {
+  background-color: #6b0023;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+/* ANIMATIONS */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .menu-items {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar {
+    gap: 30px;
+  }
+}
+/* RESPONSIVE DESIGN */
+
+/* 🌸 Tablettes (entre 768px et 1024px) */
+@media (max-width: 1024px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    gap: 25px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+  }
+
+  .hero p {
+    font-size: 20px;
+  }
+
+  .menu-items {
+    gap: 30px;
+  }
+
+  .menu-item {
+    width: 45%;
+  }
+
+  .about p {
+    width: 90%;
+  }
+}
+
+/* 🌼 Téléphones (moins de 768px) */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 0;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logo img {
+    height: 100px;
+  }
+
+  .hero {
+    height: 85vh;
+    padding: 0 20px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .hero-content {
+    width: 90%;
+    padding: 25px 20px;
+  }
+
+  .menu h2,
+  .about h2,
+  .contact h2 {
+    font-size: 32px;
+  }
+
+  .menu-items {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .menu-item {
+    width: 90%;
+  }
+
+  .menu-item img {
+    height: 180px;
+  }
+
+  .about p {
+    font-size: 16px;
+    width: 90%;
+  }
+
+  .contact p {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .contact-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .btn {
+    width: 80%;
+    text-align: center;
+  }
+
+  footer {
+    font-size: 12px;
+    padding: 15px 0;
+  }
+}
+
+/* 💛 Très petits téléphones (moins de 480px) */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .menu-item img {
+    height: 150px;
+  }
+
+  .btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
 }

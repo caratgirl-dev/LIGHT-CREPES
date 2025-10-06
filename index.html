@@ -1,42 +1,121 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Light Crepe - Un delice pour le corps et l'ame </title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="../img/LIGHT.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Light Crêpe - Un délice pour le corps et l'âme</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="img/LIGHT.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700;900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-     <header>
+  <!-- HEADER -->
+  <header>
     <nav class="navbar">
-      <!-- Liens gauche -->
       <div class="nav-links left">
-        <a href="index.html">Accueil</a>
-        <a href="menu.html">Menu</a>
+        <a href="#hero">Accueil</a>
+        <a href="#menu">Menu</a>
       </div>
 
-      <!-- Logo au centre -->
       <div class="logo">
-        <a href="index.html"><img src="img/LIGHT.png" alt="Logo Light Crepe"></a>
+        <a href="#hero"><img src="img/LIGHT.png" alt="Logo Light Crêpe"></a>
       </div>
 
-      <!-- Liens droite -->
       <div class="nav-links right">
-        <a href="about.html">À propos</a>
-        <a href="contact.html">Contact</a>
+        <a href="#about">À propos</a>
+        <a href="#contact">Contact</a>
       </div>
     </nav>
   </header>
 
-   <section class="hero">
+  <!-- SECTION HERO -->
+  <section id="hero" class="hero">
+    <div class="hero-content fade-in">
+      <h1>Bienvenue chez Light Crêpe</h1>
+      <p>Un délice pour le corps et l'âme</p>
+      <a href="#menu" class="btn">Voir le Menu</a>
+    </div>
+  </section>
 
-  <!-- Texte du hero -->
-  <div class="hero-content">
-    <h1>Bienvenue chez Light Crepe</h1>
-    <p>Un délice pour le corps et l'âme</p>
-    <a href="menu.html" class="btn">Voir le Menu</a>
-  </div>
-</section>
+  <!-- SECTION MENU -->
+  <section id="menu" class="menu">
+    <h2>Notre Menu</h2>
+    <div class="menu-items">
+
+      <div class="menu-item fade-in">
+        <img src="img/overhead shot of plate with crepes folded into triangles.jpeg" alt="Crêpe Nature">
+        <h3>Crêpe Nature</h3>
+        <p>Simple, légère et moelleuse — parfaite avec un soupçon de sucre ou de miel.</p>
+        <span class="price">08 pièces → 2 000 FCFA</span>
+      </div>
+
+      <div class="menu-item fade-in">
+        <img src="img/Nutella Crepe Rolls.jpeg" alt="Crêpe Nutella">
+        <h3>Crêpe Nutella</h3>
+        <p>Un grand classique ! Généreusement garnie de Nutella fondant pour les amoureux du chocolat.</p>
+        <span class="price">06 pièces → 2 000 FCFA</span>
+      </div>
+
+      <div class="menu-item fade-in">
+        <img src="img/téléchargement (7).jpeg" alt="Croque Monsieur">
+        <h3>Croque Monsieur</h3>
+        <p>Un mélange savoureux de fromage fondant et de jambon croustillant, préparé avec amour.</p>
+        <span class="price">À partir de 500 FCFA</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION A PROPOS -->
+  <section id="about" class="about fade-in">
+    <div class="about-content">
+      <h2>À propos de nous</h2>
+      <p>
+        Chez <strong>Light Crêpe</strong>, nous croyons qu’une bonne crêpe peut illuminer ta journée.  
+        Nous allions saveurs, douceur et ambiance conviviale pour offrir une expérience unique.
+      </p>
+      <p>
+        Chaque recette est pensée pour apporter légèreté et plaisir, tout en respectant la qualité des ingrédients.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION CONTACT -->
+  <section id="contact" class="contact fade-in">
+    <h2>Contactez-nous</h2>
+    <p>Besoin d’une commande, d’une info ou d’un trajet pour venir chez nous ? On est là pour toi </p>
+
+    <div class="contact-buttons">
+      <a href="https://wa.me/22571708020" target="_blank" class="btn whatsapp">WhatsApp</a>
+      <a href="https://buy.yango.com/store/1a3979f3-bb0d-442a-a9f5-fdc1b24b1f75" target="_blank" class="btn yango">Yango</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Light Crêpe — Tous droits réservés.</p>
+  </footer>
+
+  <!-- SCRIPT ANIMATION -->
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+      threshold: 0.2,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('appear');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
 </body>
 </html>
